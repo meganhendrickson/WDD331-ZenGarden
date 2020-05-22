@@ -1,0 +1,250 @@
+@import 'partials/reset';
+@import 'partials/prefix-mixins';
+@import 'partials/layout'; // responsive grid and media queries
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap');
+
+// color palette - these colors will be the color swatches of the Colors section
+
+$color-1: #8c1aff; // Purple
+$color-2: #00001a; // Dark Blue - page background
+$color-3: #5BD9CC; // Green - accent
+$color-4: #A7D438; // Lime green - links
+$color-5: #cccccc; // lt grey - text
+
+
+// fonts
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Playfair Display', serif;
+
+/* -------------------------------- 
+
+xBackground 
+
+-------------------------------- */
+
+body {
+  /* this is the page background */
+  background-color: $color-2;
+}
+
+/* -------------------------------- 
+
+xPatterns
+
+-------------------------------- */
+
+.cd-box {
+  /* this is the container of various design elements */
+  border: 1px solid $color-3;
+  border-radius: 3px;
+  background: lighten($color-2, 5%);
+  box-shadow: 0 1px 1px rgba(#000, 0.05);
+  padding: 6px;
+}
+
+/* -------------------------------- 
+
+xPage Navigation 
+
+-------------------------------- */
+
+header {
+  background-color: lighten($color-2, 5%);
+}
+
+.cd-main-nav {
+  /* main navigation background color - full screen on small devices */
+  background: $color-2;
+
+  li a {
+    color: $color-5;
+    border-color: lighten($color-4, 5%);
+  }
+
+  @include MQ(M) {
+    li a {
+      color: lighten($color-4, 40%);
+
+      &.selected {
+        color: $color-4;
+        box-shadow: 0 2px 0 $color-5;
+      }
+
+      &:hover {
+        color: $color-4;
+      }
+    }
+  }
+}
+
+.cd-nav-trigger span {
+  /* hamburger menu */
+  background-color: $color-5;
+
+  &::before,
+  &::after {
+    /* upper and lower lines */
+    background-color: $color-5;
+  }
+}
+
+.nav-is-visible .cd-nav-trigger span {
+  /* hide line in the center on mobile when nav is visible */
+  background-color: rgba($color-2, 0);
+
+  &::before,
+  &::after {
+    /* preserve visibility of upper and lower lines - close icon */
+    background-color: rgba($color-2, 1);
+  }
+}
+
+.cd-download {
+  /* download button top-right visible on big devices */
+  background-color: lighten($color-2, 5%);
+
+  .no-touch &:hover {
+    background-color: lighten($color-2, 15%);
+  }
+
+  span {
+    /* tooltip */
+    background: $color-1;
+    color: $color-5;
+
+    &::before {
+      /* right arrow color */
+      border-color: $color-1;
+    }
+  }
+}
+
+/* -------------------------------- 
+
+xPage title 
+
+-------------------------------- */
+
+main > h1 {
+  color: $color-1;
+
+  @include MQ(L) {
+    /* title goes into the header on big devices */
+    color: $color-1;
+  }
+}
+
+/* -------------------------------- 
+
+xTypography 
+
+-------------------------------- */
+
+h1,
+h2 {
+  font-family: $secondary-font;
+  color: $color-1;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0 0 0.4em;
+
+  @include MQ(S) {
+    font-size: 3.2rem;
+  }
+
+  @include MQ(M) {
+    font-size: 4rem;
+  }
+}
+
+h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 1em 0;
+
+  @include MQ(S) {
+    font-size: 1.8rem;
+    margin: 1em 0 1.4em;
+  }
+}
+
+section > h2::before {
+  /* number before each section title */
+  color: darken($color-1, 10%);
+}
+
+h3, p {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: $color-5;
+
+  a {
+    color: $color-4;
+    text-decoration: underline;
+  }
+
+  @include MQ(S) {
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+}
+
+figcaption {
+  color: $color-5;
+}
+
+/* -------------------------------- 
+
+xIcons 
+
+-------------------------------- */
+
+.cd-icons li {
+  /* icons size */
+  width: 32px;
+  height: 32px;
+}
+
+/* -------------------------------- 
+
+xPage Navigation 
+
+-------------------------------- */
+.cd-primary-nav{
+  li a {
+    color: $color-4;
+
+    &.selected {
+      color: $color-4;
+      box-shadow: 0 2px 0 $color-5;
+    }
+
+    &:hover {
+      color: $color-1;
+      text-decoration: underline;
+    }
+  }
+}
+
+.cd-other-links{
+  li a {
+    color: $color-3;
+
+    &.selected {
+      color: $color-3;
+      box-shadow: 0 2px 0 $color-5;
+    }
+
+    &:hover {
+      color: $color-1;
+      text-decoration: underline;
+    }
+  }
+  
+}
+@import 'partials/basic-style';
