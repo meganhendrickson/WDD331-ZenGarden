@@ -1,0 +1,32 @@
+.cd-primary-nav{
+    li a {
+      color: $color-4;
+  
+      &.selected {
+        color: $color-4;
+        box-shadow: 0 2px 0 $color-5;
+      }
+  
+      &:hover {
+        color: $color-1;
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  .cd-other-links{
+    li a {
+      color: $color-3;
+  
+      &.selected {
+        color: $color-3;
+        box-shadow: 0 2px 0 $color-5;
+      }
+  
+      &:hover {
+        color: $color-1;
+        text-decoration: underline;
+      }
+    }
+    
+  }
