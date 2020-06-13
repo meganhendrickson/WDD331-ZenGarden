@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap');
+
+// color palette - these colors will be the color swatches of the Colors section
+
+$color-1: #8c1aff; // Purple
+$color-2: #00001a; // Dark Blue - page background
+$color-3: #5BD9CC; // Green - accent
+$color-4: #A7D438; // Lime green - links
+$color-5: #cccccc; // lt grey - text
+
+
+// fonts
+$primary-font: 'Roboto',
+sans-serif;
+$secondary-font: 'Playfair Display',
+serif;
+
+@media (max-width: 767px) {
+    .explanation::after {
+        content: url("https://via.placeholder.com/300x150");
+    }
+
+    .participation::before {
+        content: url("https://via.placeholder.com/300x150");
+    }
+}
+
+@media (min-width: 768px) {
+
+    .page-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 33.3%);
+        gap: 20px;
+    }
+
+    .intro {
+        grid-column: 1/4;
+        display: grid;
+        grid-template-columns: repeat(3, 33.3%);
+        grid-template-rows: repeat(2, 50%);
+        gap: 10px;
+        width: 100%;
+
+        header {
+            grid-column: 1;
+            grid-row: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .summary {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .preamble {
+            height: 100%;
+            grid-column: 2 / 4;
+            grid-row: 1 / 3;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    #zen-supporting {
+        grid-column: 1 / 3;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto auto;
+        gap: 15px;
+
+        .explanation {
+            grid-column: 1/3;
+            grid-row: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .participation::before,
+        .requirements::before {
+            content: url('https://via.placeholder.com/150');
+        }
+
+        .participation {
+            grid-column: 1;
+        }
+
+        .benefits {
+            grid-column: 1;
+        }
+
+        .requirements {
+            grid-column: 2;
+            grid-row: 2/4;
+        }
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .design-selection {
+            flex:1;
+        }
+
+        .design-archives {
+
+            flex: 1 0 69%;
+        }
+
+        .zen-resources {
+            margin-top: 10px;
+        }
+    }
+
+    footer {
+        grid-column: 1/3;
+    }
+}
