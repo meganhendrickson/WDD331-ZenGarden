@@ -1,26 +1,178 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap");
-@media (max-width: 767px) {
-  .explanation::after {
-    content: url("https://via.placeholder.com/300x150");
-  }
-
-  .participation::before {
-    content: url("https://via.placeholder.com/300x150");
-  }
+body {
+  background-color: #00001a;
+  font-family: "Roboto", sans-serif;
+  color: #cccccc;
+  font-size: 20px;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  color: #8c1aff;
+  letter-spacing: 1px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #5BD9CC;
+}
+
+.intro header {
+  border-top: 2px #5BD9CC solid;
+  border-left: 2px #5BD9CC solid;
+  border-right: 2px #5BD9CC solid;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px 20px 10px 20px;
+  height: 100%;
+}
+.intro header h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+  color: #5BD9CC;
+}
+.intro header h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+.intro .summary {
+  border-bottom: 2px #5BD9CC solid;
+  border-left: 2px #5BD9CC solid;
+  border-right: 2px #5BD9CC solid;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 10px 20px 10px 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.preamble {
+  background: radial-gradient(circle, #22063e 0%, #00001a 100%);
+  border: 2px #5BD9CC solid;
+  border-radius: 10px;
+  padding: 10px 20px 10px 20px;
+}
+.preamble h3 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+#zen-supporting {
+  margin-top: 20px;
+}
+#zen-supporting .explanation {
+  border: 2px #5BD9CC solid;
+  border-radius: 10px;
+}
+#zen-supporting .explanation:after {
+  content: "";
+  display: inline-block;
+  background: url("1541125829.svg");
+  height: 180px;
+  width: 100%;
+}
+#zen-supporting .explanation h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.sidebar h3 {
+  font-size: 0.7em;
+}
+.sidebar li {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 23.4% 0 10.7%;
+  float: none;
+  width: auto;
+  padding: 1.1em;
+  font-size: 0.6em;
+}
+.sidebar li a {
+  margin-bottom: 0.25em;
+  font-style: normal;
+  text-decoration: none;
+}
+.sidebar li a:hover {
+  color: #5BD9CC;
+}
+.sidebar li .design-name {
+  text-transform: none;
+  display: block;
+  font-size: 1.2em;
+}
+
+.requirements {
+  background: radial-gradient(circle, #22063e 0%, #00001a 100%);
+  border: 2px #5BD9CC solid;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.participation {
+  background: radial-gradient(circle, #22063e 0%, #00001a 100%);
+  border: 2px #5BD9CC solid;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.benefits {
+  background: radial-gradient(circle, #22063e 0%, #00001a 100%);
+  border: 2px #5BD9CC solid;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 720px;
+  margin: 0 auto;
+  margin-top: 20px;
+  list-style: none;
+  width: 100%;
+}
+footer a {
+  font-size: 22px;
+  text-decoration: none;
+  transition: all 0.45s;
+  width: 125px;
+  height: 50px;
+  transition: background-position-x 0.9s linear;
+  text-align: center;
+}
+footer a:hover {
+  border-bottom: 2px #5BD9CC solid;
+}
+
 @media (min-width: 768px) {
   .page-wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 33.3%);
+    grid-template-columns: auto auto auto;
     gap: 20px;
   }
 
   .intro {
     grid-column: 1/4;
     display: grid;
-    grid-template-columns: repeat(3, 33.3%);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 50%);
-    gap: 10px;
+    column-gap: 10px;
     width: 100%;
   }
   .intro header {
@@ -39,7 +191,9 @@
     grid-row: 1/3;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+  }
+  .intro .preamble h3 {
+    justify-self: flex-start;
   }
 
   #zen-supporting {
@@ -54,10 +208,6 @@
     grid-row: 1;
     display: flex;
     flex-direction: column;
-  }
-  #zen-supporting .participation::before,
-#zen-supporting .requirements::before {
-    content: url("https://via.placeholder.com/150");
   }
   #zen-supporting .participation {
     grid-column: 1;
@@ -87,6 +237,11 @@
 
   footer {
     grid-column: 1/3;
+  }
+
+  .design-selection h3 {
+    text-align: center;
+    font-size: 2rem;
   }
 }
 

@@ -14,8 +14,10 @@ $color-5: #cccccc; // lt grey - text
 
 
 // fonts
-$primary-font: 'Roboto', sans-serif;
-$secondary-font: 'Playfair Display', serif;
+$primary-font: 'Roboto',
+sans-serif;
+$secondary-font: 'Playfair Display',
+serif;
 
 /* -------------------------------- 
 
@@ -24,8 +26,8 @@ xBackground
 -------------------------------- */
 
 body {
-  /* this is the page background */
-  background-color: $color-2;
+    /* this is the page background */
+    background-color: $color-2;
 }
 
 /* -------------------------------- 
@@ -35,12 +37,12 @@ xPatterns
 -------------------------------- */
 
 .cd-box {
-  /* this is the container of various design elements */
-  border: 1px solid $color-3;
-  border-radius: 3px;
-  background: lighten($color-2, 5%);
-  box-shadow: 0 1px 1px rgba(#000, 0.05);
-  padding: 6px;
+    /* this is the container of various design elements */
+    border: 1px solid $color-3;
+    border-radius: 3px;
+    background: lighten($color-2, 5%);
+    box-shadow: 0 1px 1px rgba(#000, 0.05);
+    padding: 6px;
 }
 
 /* -------------------------------- 
@@ -57,13 +59,13 @@ xPage title
 
 -------------------------------- */
 
-main > h1 {
-  color: $color-1;
-
-  @include MQ(L) {
-    /* title goes into the header on big devices */
+main>h1 {
     color: $color-1;
-  }
+
+    @include MQ(L) {
+        /* title goes into the header on big devices */
+        color: $color-1;
+    }
 }
 
 /* -------------------------------- 
